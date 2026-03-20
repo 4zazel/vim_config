@@ -49,11 +49,21 @@ let mapleader = " "
 
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
-nnoremap <leader>c :bd<CR>
+nnoremap <silent> <leader>c :bd<CR>
 nnoremap <leader>e :Ex<CR>
 nnoremap <leader>x :copen<CR>
 nnoremap <leader>r :make!<CR>
 nnoremap <leader>R :set makeprg=
+
+noremap <c-up> <c-w>+
+noremap <c-down> <c-w>-
+noremap <c-left> <c-w>>
+noremap <c-right> <c-w><
+
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
 
 nnoremap <leader>p :edit $MYVIMRC<CR>
 
@@ -71,7 +81,23 @@ nnoremap <C-k> <C-w>k
 
 nnoremap <leader>th :below term<CR>
 
-nnoremap <ESC> :noh<CR><CR>
+nnoremap <silent> <ESC> :noh<CR><CR>
 
-" 5. Custom
+" 5. Status Line
+" Clear status line when vimrc is reloaded.
+set statusline=
+
+" Status line left side.
+set statusline+=\ %F\ %M\ %Y\ %R
+
+" Use a divider to separate the left side from the right side.
+set statusline+=%=
+
+" Status line right side.
+set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
+
+" Show the status on the second to last line.
+set laststatus=2
+
+" 6. Custom
 " ADD GREP AND FIND
